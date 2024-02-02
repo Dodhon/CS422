@@ -1,0 +1,65 @@
+---
+title: "CS 422 HW 1"
+author: "Thupten Wangpo"
+output: 
+  html_notebook:
+    toc: yes
+    toc_float: yes
+  html_document:
+    toc: yes
+    df_print: paged
+---
+
+
+
+### Part 1-A
+```{r}
+
+knitr::opts_knit$set(root.dir = '/tmp')
+
+attach(cars)
+print(cars)
+
+```
+### Part 1-B.
+
+```{r}
+# Add code here.  See manual page for the plot() command.
+plot(cars, main="Speed vs Distance of Cars in the 1920s", type = 'p')
+plot(cars, main="Speed vs Distance of Cars in the 1920s", type = 'l')
+
+```
+### Part 1-C (Summary)
+```{r}
+# Add code here.  See manual page for the summary() command.
+summary_cars <- summary(cars)
+summary_cars
+```
+
+### Part 1-D
+```{r}
+# Add code here.  Save maximum speed in a variable called "max.speed" and
+# minimum distance in a variable called "min.dist".  
+max.speed <- max(cars$speed)
+min.dist <- min(cars$dist)
+
+# The code below will then print your output.
+
+str <- paste0("Maximum speed is ", max.speed, ", and minimum distance is ", 
+              min.dist)
+str
+```
+### Part 1-E
+```{r}
+# Add code here
+ratio <- c(cars$speed/cars$dist)
+ratio
+
+```
+
+### Part 1-F
+```{r}
+# Add code here
+cars$ratio <- ratio
+cars
+```
